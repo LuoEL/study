@@ -12,7 +12,9 @@ HAL_GPIO_TogglePin()    翻转引脚电平
                 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)//回调函数
                 HAL_Delay();//这个延时也是中断延时，所以也有优先级，用的时候要考虑优先级
 
-3.定时器中断    
+3.定时器中断    定时器配置只用配置时钟，然后设置PSC，ARR，NVIC里面设置优先级
+                HAL_TIM_Base_Start_IT(&htim6);//要在main里面开启对应的中断句柄
+                void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)//并且启动回调函数
 
 
 
