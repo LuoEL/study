@@ -1,0 +1,22 @@
+stm32
+
+GPIO:
+HAL_GPIO_WritePin()     设置引脚输出电平 
+HAL_GPIO_ReadPin()      读取引脚输入电平 
+HAL_GPIO_TogglePin()    翻转引脚电平 
+
+中断：
+1.轮询模式      普通GPIO，不需要启用中断
+
+2.外部中断模式  GPIO设置EXTI，并且在NVIC里面开启中断，配置优先级
+                void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)//回调函数
+                HAL_Delay();//这个延时也是中断延时，所以也有优先级，用的时候要考虑优先级
+
+3.定时器中断    
+
+
+
+
+4.串口中断
+5.DMA模式
+6.事件模式
