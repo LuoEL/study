@@ -25,4 +25,8 @@ HAL_GPIO_TogglePin()    翻转引脚电平
 5.DMA模式       选择串口模式，并且配置DMA和NVIC
                 HAL_UART_Receive_DMA HAL_UART_Transmit_DMA
 
-6.事件模式
+定时器
+1.PWM 输出
+2.输入捕获
+3.编码器模式
+4.高级定时器
