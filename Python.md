@@ -64,10 +64,92 @@ Python 基础（变量、列表、循环、函数）
             print(random.randrange(1,10)) #生成1到9的随机数
 
 4.if
+  and
+  or
+  pass
+
+5.while
+  continue
+
+6.for
+  for循环用于迭代序列（即列表，元组，字典，集合或字符串）
+  如需循环一组代码指定的次数，我们可以使用 range() 函数
+  range() 函数默认将序列递增 1，但是可以通过添加第三个参数来指定增量值：range(2, 30, 3)(起始，结束，步长)  
+
+7.函数
+  使用 def 关键字定义函数
+
 
 
 NumPy 基础（数组、矩阵乘法、转置、求和）
 
+1.入门
+  import numpy  #导入库
+  import numpy as np  #用np代替numpy
+
+2.数组创建
+  arr = np.array([1, 2, 3, 4, 5]) #arr是numpy.ndarray类型的
+  arr = np.array([[1, 2, 3], [4, 5, 6]])  #二维数组
+  arr = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])  #三维数组
+  arr.ndim，该属性返回一个整数，该整数会告诉我们数组有多少维
+  arr = np.array([1, 2, 3, 4], ndmin=5) #创建一个五维数组
+  arr.shape 该属性返回一个元组，每个索引具有相应元素的数量
+  arr.reshape(4, 3) 最外面的维度将有 4 个数组，每个数组包含 3 个元素，把一维改为二维
+  reshape(-1) 将多维数组转换为 1D 数组
+  for x in np.nditer(arr):  迭代遍历数组的每个标量
+  ndenumerate() 元素的相应索引
+
 Matplotlib 基础（画点、画线、显示）
+1.pypolt
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  xpoints = np.array([0, 6])
+  ypoints = np.array([0, 250])
+
+  plt.plot(xpoints, ypoints)
+  plt.show()
+
+2.marker 
+  来用指定的标记强调每个点
+  plt.plot(ypoints, marker = 'o')
+  plt.plot(ypoints, 'o:r')  marker|line|color
+
+3.linestyle
+  plt.plot(ypoints, linestyle = 'dotted') #不会额外标出点
+
+4.标签
+  font1 = {'family':'serif','color':'blue','size':20}
+  font2 = {'family':'serif','color':'darkred','size':15}
+
+  plt.title("Sports Watch Data", fontdict = font1)
+  plt.xlabel("Average Pulse", fontdict = font2)
+  plt.ylabel("Calorie Burnage", fontdict = font2)
+
+5.网格
+  plt.grid()
+  plt.grid(axis = 'x')  #只显示x的网格
+
+6.多图表
+  subplot()
+  plt.subplot(1, 2, 1)  # 图形有 1 行，2 列，这个图表是第一个图表。
+
+7.散点图
+  scatter()
+  plt.scatter(x, y, color = 'hotpink', s=sizes, alpha=0.5)  #颜色|大小|透明度
+
+8.条形图
+  plt.bar(x, y, width = 0.1)  #宽度
+
+9.直方图
+  plt.hist(x)
+
+10.饼图
+  y = np.array([35, 25, 25, 15])
+  mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+  mycolors = ["black", "hotpink", "b", "#4CAF50"]
+  plt.pie(y, labels = mylabels, colors = mycolors)  #标签
+  plt.legend()  #为每个楔形添加解释列表
+
 
 Pandas 基础（读取csv）
